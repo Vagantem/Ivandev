@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Run a one-line script
-          run: echo ${{ secrets.HOST }},${{ secrets.USERNAME }},${{ secrets.PASSWORD }},${{ secrets.PORT }}
+      run: echo ${{ secrets.HOST }},${{ secrets.USERNAME }},${{ secrets.PASSWORD }},${{ secrets.PORT }}
 
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
