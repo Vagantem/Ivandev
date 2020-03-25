@@ -11,8 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - run: |
-        - sudo apt-get install sshpass
-        - echo "sshPass installed"
+        sudo apt-get install sshpass
+        echo "sshPass installed"
 
     - name: Run a one-line script
       run: echo Hello, world!
