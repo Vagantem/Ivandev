@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: executing remote ssh commands using password
+    - uses: actions/checkout@v1
     - run: |
         - sudo apt-get install sshpass
         - echo "sshPass installed"
