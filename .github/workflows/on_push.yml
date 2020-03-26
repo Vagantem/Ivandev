@@ -6,20 +6,15 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Install Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - name: Deploy to Server
-      uses: easingthemes/ssh-deploy@v2.0.7
-      env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rltgoDzvO --delete"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
+      name: Build
+      runs-on: ubuntu-latest
+      steps:
+      - name: executing remote ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            whoami
+            ls -al
