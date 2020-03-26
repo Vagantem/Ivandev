@@ -1,0 +1,17 @@
+body {
+    background: black url("../img/background.gif") no-repeat top center;
+    background-size: cover;
+    color: white;
+    font-family: monospace;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 250px;
+    text-shadow: orangered 5px 10px 5px;
+}
