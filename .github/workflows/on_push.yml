@@ -17,5 +17,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            cd ../
-            ls
+            cd ../var/www/
+            rm -rf ivandev/*
+            cd ivandev
+            git clone https://github.com/Vagantem/Ivandev.git $(pwd)
